@@ -51,7 +51,7 @@ export default function AlertDialog() {
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
-        <DialogTitle >  대화할 사람 목록  </DialogTitle>
+        <DialogTitle >  대화할 사람 추가  </DialogTitle>
         <DialogContent>
    
         </DialogContent>
