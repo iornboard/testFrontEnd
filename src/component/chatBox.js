@@ -25,6 +25,13 @@ const messages = [
     description: "내 동생",
     chat:["잘 지내?"],
   },
+  {
+    id: 3,
+    email: "kuck1111@gmail.com",
+    name : "Gman",
+    description: "시범용",
+    chat:["ㅋㅋㅋㅋ"],
+  },
 ];
 
 const useStyles = makeStyles((theme) => ({
