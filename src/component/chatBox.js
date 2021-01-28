@@ -4,11 +4,8 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemAvatar from '@material-ui/core/ListItemAvatar';
-import ListItemText from '@material-ui/core/ListItemText';
 import ListSubheader from '@material-ui/core/ListSubheader';
-import Avatar from '@material-ui/core/Avatar';
+import Chatting from './chatting'
 
 const messages = [
   {
@@ -16,7 +13,7 @@ const messages = [
     email: "kuck1234@gmail.com",
     name : "남현수",
     description: "내 친구",
-    chat:["ㅋㅋㅋ"],
+    chat:["ㅋㅋㅋ","잘 지내냐","그렇구나"],
   },
   {
     id: 2,
@@ -72,17 +69,12 @@ export default function BottomAppBar() {
           My chat list
         </Typography>
         <List className={classes.list}>
-          {messages.map(({ id, email, name , chat}) => (
-            <React.Fragment key={id}>
-              {id === 1 && <ListSubheader className={classes.subheader}>Today</ListSubheader>}
-              {id === 3 && <ListSubheader className={classes.subheader}>Yesterday</ListSubheader>}
-              <ListItem button>
-                <ListItemAvatar>
-                  <Avatar alt={name} src="/broken-image.jpg" colorDefault="red"/>
-                </ListItemAvatar>
-                <ListItemText primary={name} secondary={email} />
-                <Typography>  {chat[0]}  </Typography>
-              </ListItem>
+          {messages.map((item) => (
+            <React.Fragment key={item.id}>
+              {item.id === 1 && <ListSubheader className={classes.subheader}>Today</ListSubheader>}
+              {item.id === 3 && <ListSubheader className={classes.subheader}>Yesterday</ListSubheader>}
+              <Chatting item = {item}/>
+              
             </React.Fragment>
           ))}
         </List>
