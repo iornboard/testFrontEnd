@@ -5,7 +5,10 @@ import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import List from '@material-ui/core/List';
 import ListSubheader from '@material-ui/core/ListSubheader';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
 import Chatting from './chatting'
+
 
 const messages = [
   {
@@ -61,6 +64,7 @@ const useStyles = makeStyles((theme) => ({
 export default function BottomAppBar() {
   const classes = useStyles();
 
+
   return (
     <React.Fragment>
       <CssBaseline />
@@ -74,7 +78,6 @@ export default function BottomAppBar() {
               {item.id === 1 && <ListSubheader className={classes.subheader}>Today</ListSubheader>}
               {item.id === 3 && <ListSubheader className={classes.subheader}>Yesterday</ListSubheader>}
               <Chatting item = {item}/>
-              
             </React.Fragment>
           ))}
         </List>

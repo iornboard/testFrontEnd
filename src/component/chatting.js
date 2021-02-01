@@ -10,17 +10,21 @@ import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import ListItemText from '@material-ui/core/ListItemText';
 import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
+import TextField from '@material-ui/core/TextField';
+import Progress from './progress'
 
 export default function AlertDialog(props) {
     const [open, setOpen] = React.useState(false);
     const [chatList, setChatList] = React.useState([]);
+    const [chat, setChat] = React.useState("");
 
-    
+  const handleTextChange = (event) => {
+    setChat(event.currentTarget.value);
+  }
 
   const handleClickOpen = () => {
     setOpen(true);
     setChatList(props.item.chat);
-    console.log(chatList);
   };
 
   const handleClose = () => {
@@ -45,8 +49,12 @@ export default function AlertDialog(props) {
         <DialogTitle id="alert-dialog-title">{"채팅내용"}</DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
-          
+          {chatList ? chatList.map( item => ( <ListItem> {item} </ListItem>)) : <Progress/>} 
           </DialogContentText>
+              <TextField id="Outlined" label="이름" variant="outlined" onChange = {handleTextChange}/>  
+                <Button  color="primary">
+                확인
+                </Button>
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="primary">
